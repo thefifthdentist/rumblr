@@ -18,9 +18,9 @@ set :database, "sqlite3:app.db"
 
 get "/" do
   if session[:user_id]
-    erb :signed_in_homepage
+    erb :index_signedin
   else
-    erb :signed_out_homepage
+    erb :index_signedout
   end
 end
 
@@ -39,26 +39,23 @@ post "/sign-in" do
     # this line signs a user in
     session[:user_id] = @user.id
 
-    # lets the user know that something is wrong
-    flash[:info] = "You have been signed in"
-
+    # lets the user know login status
+    flash[:info] = "You have signed in successfully!"
     # redirects to the home page
     redirect "/"
   else
-    # lets the user know that something is wrong
-    flash[:warning] = "Your username or password is incorrect"
+    flash[:warning] = "Your username, password and/or whole way of life is incorrect."
 
-    # if user does not exist or password does not match then
-    #   redirect the user to the sign in page
+    #   redirect user to the sign-in page
     redirect "/sign-in"
   end
 end
 
-# displays signup form
+# displays sign-up form
 #   with fields for relevant user information like:
 #   username, password
 get "/sign-up" do
-  erb :sign_up
+  erb :sign-up
 end
 
 post "/sign-up" do
@@ -71,24 +68,22 @@ post "/sign-up" do
     email: params[:email]
   )
 
-  # this line does the signing in
+  # signing in
   session[:user_id] = @user.id
 
-  # lets the user know they have signed up
-  flash[:info] = "Thank you for signing up"
+  # lets the user know sign-up status
+  flash[:info] = "You signed up! AWESOME!"
 
   # assuming this page exists
   redirect "/"
 end
 
-# when hitting this get path via a link
-#   it would reset the session user_id and redirect
-#   back to the homepage
+# if from hit via link, resets session and redirects to home
 get "/sign-out" do
   # this is the line that signs a user out
   session[:user_id] = nil
 
-  # lets the user know they have signed out
+  # lets the user know sign-out
   flash[:info] = "You have been signed out"
 
   redirect "/sign-in"
@@ -103,7 +98,6 @@ end
 get "/post" do
   @posts = Post.all
   @user = User.find(session[:user_id])
-
   erb :post
 end
 
