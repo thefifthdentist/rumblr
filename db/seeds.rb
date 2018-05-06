@@ -1,4 +1,3 @@
 require "./models"
 
-User.create(username: "orlandoc", password: "12345")
-User.create(username: "chris", password: "test")
+User.create(first_name: "Mada", last_name: "Romero", username: "thefifthdentist", birthday: "07/14/1789", email: "madalena73@gmail.com", password: "password")

@@ -1,0 +1,15 @@
+<article class="content">
+<% if session[:user_id] %>
+  <h1 id="cancel_account">Cancel Your Profile</h1>
+  <h3>Do you really, really, really want to delete your Persphone account?</h3>
+    <h6>If you're really really sure, input your username below and click "Ok".</h6>
+  <form action="/settings" method="post">
+    <input id="delete-form" class="forms" type="text" name="title" id="title">
+      <br />
+    <input style="margin-top: 0;" id="sign-button" type="submit" value="ABORT!">
+  </form>
+<% else %>
+  <h1>You need to be signed in to access this feature.</h1>
+    <a href="/sign-in"><button class="sign-button">SIGN IN</button></a>
+<% end %>
+</article>
