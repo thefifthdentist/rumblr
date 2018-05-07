@@ -23,6 +23,98 @@
 
 </head>
 <body style="background-color: #6b0504; color:#d69f7e; font-family: 'Amarante'">
+<header>
+
+  <!-- Sub Navigation -->
+  <div class="top-bar" style="background-color: #3c0000";>
+    <div class="top-bar-left">
+      <ul class="menu" style="background-color: #3c0000; font-family: 'Nosifer', cursive;">
+        <li><a href="/sign-in" style="color:#d69f7e">Sign In</a></li>
+        <li><a href="/sign-up" style="color:#d69f7e">Sign Up</a></li>
+        <li><a href="/profile" style="color:#d69f7e">Profile</a></li>
+      </ul>
+    </div>
+    <div class="top-bar-right">
+      <form>
+        <ul class="menu" style="background-color: #3c0000; font-family: 'Nosifer', cursive;">
+          <li><input type="search" placeholder="Search"></li>
+          <li><button type="submit" class="button" style="background-color:#d69f7e; color:#3c0000; font-family: 'Nosifer', cursive;">Search</button></li>
+        </ul>
+      </form>  
+    </div>
+  </div>
+  <!-- /Sub Navigation -->
+
+  <!-- logo and ad break -->
+  <br>
+
+  <article class="grid-container" style="background-color: #6b0504;">
+    <div class="grid-x grid-margin-x">
+      <div class="medium-4 cell">
+        <img src="images/shawndead.jpg" alt="company logo" style="border: 2px solid #774936;">
+      </div>
+      <div class="medium-8 cell">
+        <img src="images/logo.png" alt="advertisement for deep fried Twinkies">
+      </div>
+    </div>
+  </article>
+  <!-- / logo and ad break -->
+
+  <br>
+
+  <div class="title-bar" data-responsive-toggle="main-menu" data-hide-for="medium">
+    <button class="menu-icon" type="button" data-toggle></button>
+    <div class="title-bar-title">Menu</div>
+  </div>
+
+  <div class="top-bar align-center" id="main-menu" style="background-color: #3c0000";>
+    <ul class="menu vertical medium-horizontal medium-text-center" data-responsive-menu="drilldown medium-dropdown" style="background-color: #3c0000";>
+      <li class="has-submenu"><a href="#" style="color:#d69f7e; font-family: 'Nosifer', cursive;">American/Canadian</a>
+        <ul class="submenu menu vertical" data-submenu style="background-color:#3c0000">
+          <li><a href="#" style="color:#d69f7e">Supernatural</a></li>
+          <li><a href="#" style="color:#d69f7e">Psychos</a></li>
+          <li><a href="#" style="color:#d69f7e">Hilarious</a></li>
+        </ul>
+      </li>
+      <li class="has-submenu"><a href="#" style="color:#d69f7e; font-family: 'Nosifer', cursive;">Korean</a>
+        <ul class="submenu menu vertical" data-submenu style="background-color:#3c0000">
+          <li><a href="#" style="color:#d69f7e">Supernatural</a></li>
+          <li><a href="#" style="color:#d69f7e">Psychos</a></li>
+          <li><a href="#" style="color:#d69f7e">Hilarious</a></li>
+        </ul>
+      </li>
+      <li class="has-submenu"><a href="#" style="color:#d69f7e; font-family: 'Nosifer', cursive;">Japanese</a>
+        <ul class="submenu menu vertical" data-submenu style="background-color:#3c0000">
+          <li><a href="#" style="color:#d69f7e">Supernatural</a></li>
+          <li><a href="#" style="color:#d69f7e">Psychos</a></li>
+          <li><a href="#" style="color:#d69f7e">Hilarious</a></li>
+        </ul>
+      </li>
+      <li class="has-submenu"><a href="#" style="color:#d69f7e; font-family: 'Nosifer', cursive;">Australian</a>
+        <ul class="submenu menu vertical" data-submenu style="background-color:#3c0000">
+          <li><a href="#" style="color:#d69f7e">Supernatural</a></li>
+          <li><a href="#" style="color:#d69f7e">Psychos</a></li>
+          <li><a href="#" style="color:#d69f7e">Hilarious</a></li>
+        </ul>
+      </li>
+      <li class="has-submenu"><a href="#" style="color:#d69f7e; font-family: 'Nosifer', cursive;">Thai</a>
+        <ul class="submenu menu vertical" data-submenu style="background-color:#3c0000">
+          <li><a href="#" style="color:#d69f7e">Supernatural</a></li>
+          <li><a href="#" style="color:#d69f7e">Psychos</a></li>
+          <li><a href="#" style="color:#d69f7e">Hilarious</a></li>
+        </ul>
+      </li>
+      <li class="has-submenu"><a href="#" style="color:#d69f7e; font-family: 'Nosifer', cursive;">Filipino</a>
+        <ul class="submenu menu vertical" data-submenu style="background-color:#3c0000">
+          <li><a href="#" style="color:#d69f7e">Supernatural</a></li>
+          <li><a href="#" style="color:#d69f7e">Psychos</a></li>
+          <li><a href="#" style="color:#d69f7e">Hilarious</a></li>
+        </ul>
+      </li>
+    </ul>
+  </div>
+
+</header>
   <% flash.keys.each do |type| %>
     <div class="flash <%= type %>">
       <%= flash[type] %>
@@ -60,12 +152,6 @@
     <% else %>
 
       <!-- only show this code when signed out -->
-      <li class="nav-item">
-      <a class="nav-link" href="/sign-in" />Sign In</a>
-      </li>
-      <li class="nav-item">
-      <a class="nav-link" href="/sign-up" />Sign Up</a>
-      </li>
 
     <% end %>
     </ul>
@@ -74,10 +160,10 @@
 
     </ul>
 
-    <form class="form-inline my-2 my-lg-0">
+  <!--  <form class="form-inline my-2 my-lg-0">
       <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
       <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-    </form>
+    </form> -->
   </div>
 </nav>
 
@@ -124,14 +210,14 @@
       <div class="large-4 cell">
         <h5 style="font-family: 'Nosifer', cursive; color:#d69f7e;">MUST-SEES</h5>
         <div class="grid-x small-up-4">
-          <div class="cell"><a href="https://en.wikipedia.org/wiki/Oldboy_(2003_film)"><img class="thumbnail" src="images/oldboy.jpg" alt="image of space dog"></a></div>
-          <div class="cell"><a href="https://en.wikipedia.org/wiki/Slither_(2006_film)"><img class="thumbnail" src="images/slither.jpg" alt="image of space dog"></a></div>
-          <div class="cell"><a href="https://en.wikipedia.org/wiki/Gozu"><img class="thumbnail" src="images/gozu.jpg" alt="image of space dog"></div>
-          <div class="cell"><a href="https://en.wikipedia.org/wiki/Fright_Night"><img class="thumbnail" src="images/frightnight.jpg" alt="image of space dog"></a></div>
-          <div class="cell"><a href="https://en.wikipedia.org/wiki/Severance_(film)"><img class="thumbnail" src="images/severance.jpg" alt="image of space dog"></a></div>
-          <div class="cell"><a href="https://en.wikipedia.org/wiki/Grace_(2009_film)"><img class="thumbnail" src="images/grace.jpg" alt="image of space dog"></div>
-          <div class="cell"><a href="https://en.wikipedia.org/wiki/The_Descent"><img class="thumbnail" src="images/descent.jpg" alt="image of space dog"></a></div>
-          <div class="cell"><a href="https://en.wikipedia.org/wiki/Dead_Snow"><img class="thumbnail" src="images/deadsnow.jpg" alt="image of space dog"></a></div>
+          <div class="cell"><a href="https://en.wikipedia.org/wiki/Oldboy_(2003_film)"><img class="thumbnail" src="images/oldboy.jpg" target="_blank" alt="image of space dog"></a></div>
+          <div class="cell"><a href="https://en.wikipedia.org/wiki/Slither_(2006_film)"><img class="thumbnail" src="images/slither.jpg" target="_blank" alt="image of space dog"></a></div>
+          <div class="cell"><a href="https://en.wikipedia.org/wiki/Gozu"><img class="thumbnail" src="images/gozu.jpg" target="_blank" alt="image of space dog"></div>
+          <div class="cell"><a href="https://en.wikipedia.org/wiki/Fright_Night"><img class="thumbnail" src="images/frightnight.jpg" target="_blank" alt="image of space dog"></a></div>
+          <div class="cell"><a href="https://en.wikipedia.org/wiki/Severance_(film)"><img class="thumbnail" src="images/severance.jpg" target="_blank" alt="image of space dog"></a></div>
+          <div class="cell"><a href="https://en.wikipedia.org/wiki/Grace_(2009_film)"><img class="thumbnail" src="images/grace.jpg" target="_blank" alt="image of space dog"></div>
+          <div class="cell"><a href="https://en.wikipedia.org/wiki/The_Descent"><img class="thumbnail" src="images/descent.jpg" target="_blank" alt="image of space dog"></a></div>
+          <div class="cell"><a href="https://en.wikipedia.org/wiki/Dead_Snow"><img class="thumbnail" src="images/deadsnow.jpg" target="_blank" alt="image of space dog"></a></div>
         </div>
 
       </div>

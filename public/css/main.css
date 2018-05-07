@@ -9,3 +9,14 @@ body {
 hr {
   color: #d69f7e;
 }
+
+.flash {
+    border-radius: 2px;
+    padding: 20px;
+    margin-bottom: 10px;
+    position: relative;
+  }
+
+.flash.hide {
+    display: none;
+  }
