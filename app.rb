@@ -3,29 +3,27 @@ require "sinatra/activerecord"
 require "sinatra/flash"
 require "./models"
 
-configure :development do
-  set :database, "sqlite3:main.db"
-  require 'pry'
-end
+# configure :development do
+#   set :database, "sqlite3:main.db"
+#   require 'pry'
+# end
+#
+# configure :production do
+#   set :database, ENV["DATABASE_URL"]
+# end
+#
+# enable :sessions
+#
+# set :database, "sqlite3:app.db"
 
-configure :production do
-  set :database, ENV["DATABASE_URL"]
-end
-
-enable :sessions
-
-set :database, "sqlite3:app.db"
-
-get "/butt" do
-
-end
 
 get "/" do
-  if session[:user_id]
-    erb :signedin
-  else
-    erb :index_signedout
-  end
+ #if session[:user_id]
+    erb :index, :layout => :sign_in
+  # else
+  #   erb :signedin
+#  end
+
 end
 
 # displays sign in form
@@ -33,38 +31,38 @@ get "/sign_in" do
   erb :sign_in
 end
 
-# responds to sign in form
-#post "/sign-in" do
-#  @user = User.find_by(username: params[:username])
+# responds to sign_in form
+post "/sign_in" do
+ @user = User.find_by(username: params[:username])
 
   # checks to see if the user exists
   #   and also if the user password matches the password in the db
-#  if @user && @user.password == params[:password]
-    # this line signs a user in
-#    session[:user_id] = @user.id
-    # lets the user know login status
-#    flash[:info] = "You signed in!"
-    # redirects to the home page
-#    redirect "/signedin"
-#  else
-#    flash[:warning] = "Your username, password and/or whole way of life is incorrect."
+ if @user && @user.password == params[:password]
+    #this line signs a user in
+   session[:user_id] = @user.id
+  #  lets the user know login status
+   flash[:info] = "You signed in!"
+  #  redirects to the home page
+   redirect "/signedin"
+ else
+   flash[:warning] = "Your username, password and/or whole way of life is incorrect."
 
-    #   redirect user to the sign-in page
-#    redirect "/sign-in"
-#  end
-#end
+  #    redirect user to the sign_in page
+   redirect "/sign_in"
+ end
+end
 
 get "/signedin" do
-
+erb:signedin
 end
 # displays sign-up form
 #   with fields for relevant user information like:
 #   username, password
-get "/sign-up" do
-  erb :sign-up
+get "/sign_up" do
+  erb :sign_up
 end
 
-post "/sign-up" do
+post "/sign_up" do
   @user = User.create(
     username: params[:username],
     password: params[:password],
@@ -80,19 +78,19 @@ post "/sign-up" do
   # lets the user know sign-up status
   flash[:info] = "You signed up! AWESOME!"
 
-  # assuming this page exists
+  assuming this page exists
   redirect "/"
 end
 
 # if from hit via link, resets session and redirects to home
-get "/sign-out" do
-  # this is the line that signs a user out
-  session[:user_id] = nil
+get "/sign_out" do
+  # # this is the line that signs a user out
+  # session[:user_id] = nil
+  #
+  # # lets the user know sign-out
+  # flash[:info] = "You have been signed out"
 
-  # lets the user know sign-out
-  flash[:info] = "You have been signed out"
-
-  redirect "/sign-in"
+  redirect "/sign_in"
 end
 
 get "/sign_in" do
@@ -102,26 +100,26 @@ redirect "signedin"
 end
 
 get "/amercand" do
-
+erb:amercand
 end
 get "/korean" do
-
+erb:korean
 end
 get "/thai" do
-
+erb:thai
 end
 get "/filipino" do
-
+erb:filipino
 end
 get "/japanese" do
-
+erb:japanese
 end
 get "/australian" do
-
+erb:australian
 end
 
 get "/users" do
-
+erb:users
 end
 
 get "/main" do
