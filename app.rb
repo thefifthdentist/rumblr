@@ -16,41 +16,47 @@ enable :sessions
 
 set :database, "sqlite3:app.db"
 
+get "/butt" do
+
+end
+
 get "/" do
   if session[:user_id]
-    erb :index_signedin
+    erb :signedin
   else
     erb :index_signedout
   end
 end
 
 # displays sign in form
-get "/sign-in" do
+get "/sign_in" do
   erb :sign_in
 end
 
 # responds to sign in form
-post "/sign-in" do
-  @user = User.find_by(username: params[:username])
+#post "/sign-in" do
+#  @user = User.find_by(username: params[:username])
 
   # checks to see if the user exists
   #   and also if the user password matches the password in the db
-  if @user && @user.password == params[:password]
+#  if @user && @user.password == params[:password]
     # this line signs a user in
-    session[:user_id] = @user.id
-
+#    session[:user_id] = @user.id
     # lets the user know login status
-    flash[:info] = "You have signed in successfully!"
+#    flash[:info] = "You signed in!"
     # redirects to the home page
-    redirect "/"
-  else
-    flash[:warning] = "Your username, password and/or whole way of life is incorrect."
+#    redirect "/signedin"
+#  else
+#    flash[:warning] = "Your username, password and/or whole way of life is incorrect."
 
     #   redirect user to the sign-in page
-    redirect "/sign-in"
-  end
-end
+#    redirect "/sign-in"
+#  end
+#end
 
+get "/signedin" do
+
+end
 # displays sign-up form
 #   with fields for relevant user information like:
 #   username, password
@@ -87,6 +93,35 @@ get "/sign-out" do
   flash[:info] = "You have been signed out"
 
   redirect "/sign-in"
+end
+
+get "/sign_in" do
+ erb :sign_in,
+   flash[:info] = "You signed in"
+redirect "signedin"
+end
+
+get "/amercand" do
+
+end
+get "/korean" do
+
+end
+get "/thai" do
+
+end
+get "/filipino" do
+
+end
+get "/japanese" do
+
+end
+get "/australian" do
+
+end
+
+get "/users" do
+
 end
 
 get "/main" do
