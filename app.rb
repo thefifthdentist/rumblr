@@ -2,6 +2,7 @@ require "sinatra"
 require "sinatra/activerecord"
 require "sinatra/flash"
 require "./models"
+require "bootstrap"
 
 # configure :development do
 #   set :database, "sqlite3:main.db"
