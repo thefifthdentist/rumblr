@@ -94,7 +94,7 @@ PLATFORMS
 DEPENDENCIES
   activerecord
   bcrypt
-  bootstrap
+  bootstrap (~> 4.1.0)
   pry
   rack-flash3
   rake

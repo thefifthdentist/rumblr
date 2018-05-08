@@ -13,4 +13,5 @@ gem 'pry'
 gem 'bcrypt'
 gem "tux"
 gem 'rack-flash3'
-gem "bootstrap"
+
+gem 'bootstrap', '~> 4.1.0'
