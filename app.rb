@@ -9,21 +9,21 @@ require "bootstrap"
 #   require 'pry'
 # end
 #
-# configure :production do
-#   set :database, ENV["DATABASE_URL"]
-# end
-#
 # enable :sessions
-#
-# set :database, "sqlite3:app.db"
+configure :development do
+set :database, "sqlite3:app.db"
+end
 
+configure :production do
+  set :database, ENV["DATABASE_URL"]
+end
 
 get "/" do
- #if session[:user_id]
-    erb :index, :layout => :sign_in
+  #if session[:user_id]
+  erb :index, :layout => :sign_in
   # else
   #   erb :signedin
-#  end
+  #  end
 
 end
 
@@ -34,27 +34,27 @@ end
 
 # responds to sign_in form
 post "/sign_in" do
- @user = User.find_by(username: params[:username])
+  @user = User.find_by(username: params[:username])
 
   # checks to see if the user exists
   #   and also if the user password matches the password in the db
- if @user && @user.password == params[:password]
+  if @user && @user.password == params[:password]
     #this line signs a user in
-   session[:user_id] = @user.id
-  #  lets the user know login status
-   flash[:info] = "You signed in!"
-  #  redirects to the home page
-   redirect "/signedin"
- else
-   flash[:warning] = "Your username, password and/or whole way of life is incorrect."
+    session[:user_id] = @user.id
+    #  lets the user know login status
+    flash[:info] = "You signed in!"
+    #  redirects to the home page
+    redirect "/signedin"
+  else
+    flash[:warning] = "Your username, password and/or whole way of life is incorrect."
 
-  #    redirect user to the sign_in page
-   redirect "/sign_in"
- end
+    #    redirect user to the sign_in page
+    redirect "/sign_in"
+  end
 end
 
 get "/signedin" do
-erb:signedin
+  erb:signedin
 end
 # displays sign-up form
 #   with fields for relevant user information like:
@@ -95,32 +95,32 @@ get "/sign_out" do
 end
 
 get "/sign_in" do
- erb :sign_in,
-   flash[:info] = "You signed in"
-redirect "signedin"
+  erb :sign_in,
+  flash[:info] = "You signed in"
+  redirect "signedin"
 end
 
 get "/amercand" do
-erb:amercand
+  erb:amercand
 end
 get "/korean" do
-erb:korean
+  erb:korean
 end
 get "/thai" do
-erb:thai
+  erb:thai
 end
 get "/filipino" do
-erb:filipino
+  erb:filipino
 end
 get "/japanese" do
-erb:japanese
+  erb:japanese
 end
 get "/australian" do
-erb:australian
+  erb:australian
 end
 
 get "/users" do
-erb:users
+  erb:users
 end
 
 get "/main" do

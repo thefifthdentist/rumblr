@@ -2,16 +2,13 @@ source "https://rubygems.org"
 
 gem "sinatra"
 gem "sinatra-flash"
-gem "sqlite3"
 gem "rake"
-gem 'activerecord', :require => 'active_record'
-gem 'sinatra-activerecord', :require => 'sinatra/activerecord'
-gem 'require_all' #=> Helps to load dependencies
-gem 'thin'
-gem 'shotgun'
-gem 'pry'
-gem 'bcrypt'
-gem "tux"
-gem 'rack-flash3'
-
+gem 'activerecord'
 gem "bootstrap"
+gem 'sinatra-activerecord'
+group :development do
+  gem "sqlite3"
+end
+group :production do
+  gem "pg"
+end
