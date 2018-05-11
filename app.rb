@@ -19,11 +19,11 @@ configure :production do
 end
 
 get "/" do
-  #if session[:user_id]
-  erb :index, :layout => :sign_in
-  # else
-  #   erb :signedin
-  #  end
+  if session[:user_id]
+  erb :index
+  else
+  erb :signedin
+  end
 
 end
 
