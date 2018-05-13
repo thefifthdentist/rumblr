@@ -23,11 +23,11 @@ configure :production do
 end
 
 get "/" do
-  if session[:user_id]
-    erb :index
-  else
-    erb :index_signedout
-  end
+  # if session[:user_id]
+  #   erb :index
+  # else
+  #   erb :index_signedout
+  # end
   erb :index
 end
 
