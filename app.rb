@@ -37,7 +37,7 @@ get "/sign_in" do
 end
 
 # responds to sign_in form
-post "/signedin" do
+post "/users" do
   @user = User.find_by(username: params[:username])
 
   # checks to see if the user exists
@@ -48,7 +48,7 @@ post "/signedin" do
     #  lets the user know login status
     flash[:info] = "You signed in!"
     #  redirects to the home page
-    redirect "/signedin"
+    redirect "/users"
   else
     flash[:warning] = "Your username, password and/or whole way of life is incorrect."
 
