@@ -1,12 +1,15 @@
+require "active_record"
+require "sqlite3"
+
 class User < ActiveRecord::Base
-    has_many :posts
+  has_one :profile
+  has_many :posts
 end
 
-# class Profile < ActiveRecord::Base
-#     has_many :posts
-#     belongs_to :user
-# end
+class Profile < ActiveRecord::Base
+  belongs_to :user
+end
 
 class Post < ActiveRecord::Base
-    belongs_to :user
+  belongs_to :user
 end
