@@ -1,6 +1,11 @@
 require "active_record"
 require "sqlite3"
 
+ActiveRecord::Base.establish_connection(
+  adapter: "sqlite3",
+  database: "app.# DEBUG: "
+)
+
 class User < ActiveRecord::Base
   has_one :profile
   has_many :posts
