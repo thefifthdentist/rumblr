@@ -2,17 +2,8 @@ require "sinatra"
 require "sinatra/activerecord"
 require "sinatra/flash"
 require "./models"
-require "bootstrap"
-require 'sendgrid-ruby'
 
-include SendGrid
-# configure :development do
-#   set :database, "sqlite3:main.db"
-#   require 'pry'
-# end
-#
-set :sessions, true
-#enable :sessions
+enable :sessions
 
 configure :development do
 set :database, "sqlite3:app.db"
@@ -21,10 +12,11 @@ end
 configure :production do
   set :database, ENV["DATABASE_URL"]
 end
+#set :sessions, true
 
 get "/" do
   if session[:user_id]
-    erb :index
+    erb :signedin
   else
     erb :index_signedout
   end
@@ -102,6 +94,10 @@ get "/sign_in" do
   erb :sign_in,
   flash[:info] = "You signed in"
   redirect "signedin"
+end
+
+get "/friends" do
+  erb:friends
 end
 
 get "/deets" do
