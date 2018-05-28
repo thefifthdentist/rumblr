@@ -258,16 +258,32 @@
   <div class="grid-x grid-margin-x">
     <div class="large-8 cell" style="border-right: 1px solid #d69f7e;">
 
+      <!-- <article class="content">
+      <% if session[:user_id] %>
+        <h1 id="cancel_account">Cancel Your Profile</h1>
+        <h3>Do you really, really, really want to delete your Persphone account?</h3>
+          <h6>If you're really really sure, input your username below and click "Ok".</h6>
+        <form action="/settings" method="post">
+          <input id="delete-form" class="forms" type="text" name="title" id="title">
+            <br />
+          <input style="margin-top: 0;" id="sign-button" type="submit" value="ABORT!">
+        </form>
+      <% else %>
+        <h1>You need to be signed in to access this feature.</h1>
+          <a href="/sign_in"><button class="sign-button">SIGN IN</button></a>
+      <% end %>
+      </article> -->
 
-      <div class="grid-x grid-margin-x">
+
+      <!-- <div class="grid-x grid-margin-x">
         <div class="large-6 cell">
           <p><a href="https://en.wikipedia.org/wiki/Housebound"><img src="images/housebound.jpg" alt="Still From the Film Housebound" style="padding: 1px; border: 1px solid #774936; background-color:#050609;"></a></p>
         </div>
         <div class="large-6 cell">
           <h4 style="font-family: 'Amarante', cursive;"><a href="https://en.wikipedia.org/wiki/Housebound" style="color:#ffffff;"><em style="color:#ffffff;">Housebound</em> : <br> A Kiwi gem</a></h4>
-          <p style="font-family: 'Amarante', cursive;">
+          <p style="font-family: 'Amarante', cursive;"> -->
             <!-- <span><i class="fi-torso" style="color:#000000";> By thefifthdentist &nbsp;&nbsp;</i></span> -->
-            <span><i class="fi-calendar" style="color:#000000";> 11/23/16 &nbsp;&nbsp;</i></span>
+            <!-- <span><i class="fi-calendar" style="color:#000000";> 11/23/16 &nbsp;&nbsp;</i></span>
             <span><i class="fi-comments" style="color:#000000";> 6 comments</i></span>
           </p>
           <p style="font-family: 'Josefin+Sans'; color:#d69f7e;">The medulla voodoo locus flesh eater, lateral suscitat mortuos braaaains comedere carnem colliculus virus. Cum horribilem walking dead resurgere de crazed sepulcris creaturis, zombie sicut de grave et serpens. </p>
@@ -282,9 +298,9 @@
         </div>
         <div class="large-6 cell">
           <h4 style="font-family: 'Amarante', cursive;"><a href="https://en.wikipedia.org/wiki/Ghost_of_Mae_Nak" style="color:#ffffff;"><em style="color:#ffffff;">The Ghost of Mae Nak</em> : <br> Thai yourself down and watch it</em></a></h4>
-          <p>
+          <p> -->
             <!-- <span><i class="fi-torso" style="color:#000000;"> By thefifthdentist &nbsp;&nbsp;</i></span> -->
-            <span><i class="fi-calendar" style="color:#000000";> 11/23/16 &nbsp;&nbsp;</i></span>
+            <!-- <span><i class="fi-calendar" style="color:#000000";> 11/23/16 &nbsp;&nbsp;</i></span>
             <span><i class="fi-comments" style="color:#000000";> 6 comments</i></span>
           </p>
           <p style="font-family: 'Josefin+Sans'; color:#d69f7e;">Qui optic gland animated corpse, brains bat substantia max brucks spinal cord terribilem incessu brains zomby. Cum horribilem walking dead resurgere de crazed sepulcris creaturis, zombie sicut de grave et serpens. </p>
@@ -299,9 +315,9 @@
         </div>
         <div class="large-6 cell">
           <h4 style="font-family: 'Amarante', cursive;"><a href="https://en.wikipedia.org/wiki/Cinderella_(2006_film)" style="color:#ffffff";><em style="color:#ffffff;">Cinderella</em> : <br> A Korean fairy tale</a></h4>
-          <p>
+          <p> -->
             <!-- <span><i class="fi-torso" style="color:#000000";> By thefifthdentist &nbsp;&nbsp;</i></span> -->
-            <span><i class="fi-calendar" style="color:#000000";> 11/23/16 &nbsp;&nbsp;</i></span>
+            <!-- <span><i class="fi-calendar" style="color:#000000";> 11/23/16 &nbsp;&nbsp;</i></span>
             <span><i class="fi-comments" style="color:#000000";> 6 comments</i></span>
           </p>
           <p style="font-family: 'Josefin+Sans'; color:#d69f7e;">Zombie ipsum brains ab cerebellum viral inferno, brein nam mend grimes malum cerveau cerebro. Aenean a dolor plan et terror soulless vulnerum contagium accedunt, mortui iam vivam unlife.</p>
@@ -316,9 +332,9 @@
         </div>
         <div class="large-6 cell">
           <h4 style="font-family: 'Amarante', cursive;"><a href="https://en.wikipedia.org/wiki/Dark_Water_(2002_film)" style="color:#ffffff"><em style="color:#ffffff;">Dark Water</em> : <br> A Mother's creepy love</a></h4>
-          <p>
+          <p> -->
             <!-- <span><i class="fi-torso" style="color:#000000";> By thefifthdentist &nbsp;&nbsp;</i></span> -->
-            <span><i class="fi-calendar" style="color:#000000";> 11/23/16 &nbsp;&nbsp;</i></span>
+            <!-- <span><i class="fi-calendar" style="color:#000000";> 11/23/16 &nbsp;&nbsp;</i></span>
             <span><i class="fi-comments" style="color:#000000";> 6 comments</i></span>
           </p>
           <p style="font-family: 'Josefin+Sans'; color:#d69f7e;">Alii missing oculis aliorum sicut serpere crabs nostram. De carne cerebro lumbering animata cervello corpora quaeritis. Summus thalamus brains sit​​, morbo basal ganglia vel maleficia?</p>
@@ -333,9 +349,9 @@
         </div>
         <div class="large-6 cell">
           <h4 style="font-family: 'Amarante', cursive;"><a href="https://en.wikipedia.org/wiki/28_Days_Later" style="color:#ffffff"><em style="color:#ffffff;">28 Days Later</em> :<br>The end is <em style="color:#ffffff;">extremely</em> fucking nigh</a></h4>
-          <p style="font-family: 'Amarante', cursive;">
+          <p style="font-family: 'Amarante', cursive;"> -->
             <!-- <span><i class="fi-torso" style="color:#000000";> By thefifthdentist &nbsp;&nbsp;</i></span> -->
-            <span><i class="fi-calendar" style="color:#000000";> 11/23/16 &nbsp;&nbsp;</i></span>
+            <!-- <span><i class="fi-calendar" style="color:#000000";> 11/23/16 &nbsp;&nbsp;</i></span>
             <span><i class="fi-comments" style="color:#000000";> 6 comments</i></span>
           </p>
           <p style="font-family: 'Josefin+Sans'; color:#d69f7e;">De braaaiiiins apocalypsi George Romero prefrontal cortex undead fornix dictum mauris. Romero morbo Congress humanamarus in auras.Nihil horum sagittis tincidunt, zombie slack-jawed gelida survival portenta.</p>
@@ -350,9 +366,9 @@
         </div>
         <div class="large-6 cell">
           <h4 style="font-family: 'Amarante', cursive;"><a href="https://en.wikipedia.org/wiki/Halloween_(1978_film)" style="color:#ffffff"><em style="color:#ffffff;">Halloween</em> : <br> The gold standard in suspense</a></h4>
-          <p>
+          <p> -->
             <!-- <span><i class="fi-torso" style="color:#000000";> By thefifthdentist &nbsp;&nbsp;</i></span> -->
-            <span><i class="fi-calendar" style="color:#000000";> 11/23/16 &nbsp;&nbsp;</i></span>
+            <!-- <span><i class="fi-calendar" style="color:#000000";> 11/23/16 &nbsp;&nbsp;</i></span>
             <span><i class="fi-comments" style="color:#000000";> 6 comments</i></span>
           </p>
           <p style="font-family: 'Josefin+Sans'; color:#d69f7e;">Brains mindless mortuis cortex creaturas, evil braaiinns monstra dentevil vultus brain comedat soulless cerebella pitiutary gland viventium. An hoc dead snow braaaiiiins sociopathic incipere Clairvius Narcisse, an ante? </p>
@@ -367,9 +383,9 @@
         </div>
         <div class="large-6 cell">
           <h4 style="font-family: 'Amarante', cursive;"><a href="https://en.wikipedia.org/wiki/John_Dies_at_the_End_(film)" style="color:#ffffff"><em style="color:#ffffff;">John Dies at the End</em> :<br> David Wong, I love you</a></h4>
-          <p>
+          <p> -->
             <!-- <span><i class="fi-torso" style="color:#000000";> By thefifthdentist &nbsp;&nbsp;</i></span> -->
-            <span><i class="fi-calendar" style="color:#000000";> 11/23/16 &nbsp;&nbsp;</i></span>
+            <!-- <span><i class="fi-calendar" style="color:#000000";> 11/23/16 &nbsp;&nbsp;</i></span>
             <span><i class="fi-comments" style="color:#000000";> 6 comments</i></span>
           </p>
           <p style="font-family: 'Josefin+Sans'; color:#d69f7e;">Nescio brains Undead cervello zombies. Sicut malus putrid brains voodoo horror. Nigh basal ganglia of the living dead. Expansis creepy arm yof darkness ulnis witchcraft missing carnem armis.</p>
@@ -385,7 +401,7 @@
         <li><a href="/" aria-label="Page 3">3</a></li>
         <li><a href="/" aria-label="Page 4">4</a></li>
         <li><a href="/" aria-label="Next page">Next <span class="show-for-sr">page</span></a></li>
-      </ul>
+      </ul> -->
 
     </div>
     <div class="grid-x large-4 cell">
