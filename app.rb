@@ -6,7 +6,7 @@ require "./models"
 enable :sessions
 
 configure :development do
-set :database, "sqlite3:app.db"
+set :database, "sqlite3:rumblr.db"
 end
 
 configure :production do
