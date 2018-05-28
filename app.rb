@@ -3,7 +3,7 @@ require "sinatra/activerecord"
 require "sinatra/flash"
 require "./models"
 
-enable :sessions
+# enable :sessions
 
 configure :development do
 set :database, "sqlite3:rumblr.db"
@@ -12,7 +12,7 @@ end
 configure :production do
   set :database, ENV["DATABASE_URL"]
 end
-#set :sessions, true
+set :sessions, true
 
 get "/" do
   if session[:user_id]
@@ -52,6 +52,11 @@ end
 get "/signedin" do
   erb:signedin
 end
+
+post "/signedin" do
+  erb:signedin
+end
+
 # displays sign-up form
 #   with fields for relevant user information like:
 #   username, password
@@ -76,7 +81,7 @@ post "/sign_up" do
   flash[:info] = "You signed up! AWESOME!"
 
   assuming this page exists
-  redirect "/"
+  redirect "/signedin"
 end
 
 # if from hit via link, resets session and redirects to home

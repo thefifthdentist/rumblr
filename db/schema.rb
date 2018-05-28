@@ -10,31 +10,24 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 0) do
+ActiveRecord::Schema.define(version: 2018_05_28_163611) do
 
-  create_table "posts", id: false, force: :cascade do |t|
-    t.text "title", null: false
+  create_table "posts", primary_key: "post_id", force: :cascade do |t|
+    t.string "title", limit: 255, null: false
     t.text "content", null: false
-    t.text "img_url"
-    t.date "created"
-    t.date "updated"
+    t.string "img_url", limit: 255
+    t.datetime "created"
+    t.datetime "updated"
   end
 
-  create_table "user_posts", primary_key: ["user_id", "post_id"], force: :cascade do |t|
-    t.integer "user_id"
-    t.integer "post_id"
-    t.index ["user_id", "post_id"], name: "sqlite_autoindex_user_posts_1", unique: true
-  end
-
-  create_table "users", id: false, force: :cascade do |t|
-    t.text "first_name", null: false
-    t.text "last_name", null: false
-    t.text "email", null: false
-    t.date "birthday", null: false
-    t.text "username"
-    t.text "password"
-    t.index ["email"], name: "sqlite_autoindex_users_1", unique: true
-    t.index ["username"], name: "sqlite_autoindex_users_2", unique: true
+  create_table "users", primary_key: "user_id", force: :cascade do |t|
+    t.string "first_name", limit: 255, null: false
+    t.string "last_name", limit: 255, null: false
+    t.string "email", limit: 255, null: false
+    t.datetime "birthday", null: false
+    t.string "username", limit: 255
+    t.string "password", limit: 255
+    t.index ["username"], name: "sqlite_autoindex_users_1", unique: true
   end
 
 end
