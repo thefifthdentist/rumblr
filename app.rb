@@ -20,7 +20,11 @@ get "/" do
   else
     erb :index_signedout
   end
-  erb :index
+  erb :sign_in
+end
+
+get "/index_signedout" do
+    erb :index_signedout
 end
 
 # displays sign in form
