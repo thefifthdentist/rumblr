@@ -20,6 +20,12 @@ ActiveRecord::Schema.define(version: 2018_05_28_163611) do
     t.datetime "updated"
   end
 
+  create_table "user_posts", primary_key: ["user_id", "post_id"], force: :cascade do |t|
+    t.integer "user_id"
+    t.integer "post_id"
+    t.index ["user_id", "post_id"], name: "sqlite_autoindex_user_posts_1", unique: true
+  end
+
   create_table "users", primary_key: "user_id", force: :cascade do |t|
     t.string "first_name", limit: 255, null: false
     t.string "last_name", limit: 255, null: false
@@ -27,7 +33,6 @@ ActiveRecord::Schema.define(version: 2018_05_28_163611) do
     t.datetime "birthday", null: false
     t.string "username", limit: 255
     t.string "password", limit: 255
-    t.index ["username"], name: "sqlite_autoindex_users_1", unique: true
   end
 
 end
